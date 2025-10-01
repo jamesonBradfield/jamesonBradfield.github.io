@@ -1,0 +1,15 @@
+title: Your Devtober 2025
+description: Documenting my October game development journey
+baseurl: ""
+url: "https://jamesonBradfield.github.io"
+
+# Build settings
+markdown: kramdown
+theme: minima
+
+# Collections for devlog posts
+permalink: /:year/:month/:day/:title/
+
+# Plugins
+plugins:
+  - jekyll-feed
