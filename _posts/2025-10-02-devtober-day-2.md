@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Day 1: Getting Started"
-date: 2025-10-01
+title: "Day 2: Spawning a bunch of cubes"
+date: 2025-10-02
 categories: devtober
 ---
 
@@ -156,4 +156,8 @@ this worked well with boids, and I believe a simple boid system could work for t
 TLDR kinda overwhelmed with next steps I think I need to solidify my goals for this month and think about what I want to achieve.
 
 ## Tomorrow's Goals
-- Next feature
+- I'd like to implement some performant physics layer that actually handles moving my cubes, ideally we implement the following.
+- update staggering (we stagger enemy/cube updates by a frame processing maybe 5 at a time).
+- pathfind at an interval (if we want to get a bunch of enemies pathfinding towards the player we just need to update a batch every X seconds) where X is some time. (we can also update the ones closer to the player quicker).
+- these might need some sort of partitioning code, a Level Grid would be easiest, with a bvh for finer partitioning?
+

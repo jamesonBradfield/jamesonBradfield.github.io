@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Day 1: Getting Started"
-date: 2025-10-01
+title: "Day 0: messing with godot source"
+date: 2025-9-30
 categories: devtober
 ---
 Today I kicked off by building godot engine from source.
