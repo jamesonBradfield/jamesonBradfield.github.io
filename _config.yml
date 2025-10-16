@@ -5,7 +5,7 @@ url: "https://jamesonBradfield.github.io"
 
 # Build settings
 markdown: kramdown
-theme: minima
+remote_theme: mmistakes/minimal-mistakes@4.26.2
 
 # Collections for devlog posts
 permalink: /:year/:month/:day/:title/
