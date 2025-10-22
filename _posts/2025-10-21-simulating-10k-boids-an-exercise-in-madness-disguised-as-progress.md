@@ -1,7 +1,9 @@
-______________________________________________________________________
-
-## layout: post title: "Simulating 10k boids, an exercise in insanity disguised as progress." date: 2025-10-21 categories:
-
+---
+layout: post
+title: "Simulating 10k boids: An exercise in insanity"
+date: 2025-10-21
+categories: "blog"
+---
 Insanity is doing the same thing over and over and expecting a different result.
 
 I've heard that phrase throughout my life and thought "of course, if something isn't working, you're obviously not trying the right thing." The follow-up thought is always something like "Edison didn't fail to make the lightbulb hundreds of times, he learned hundreds of ways not to make one." That sounds great until you're learning those hundred ways with AI whispering in your ear. It makes you painfully aware of what you don't understand. Even in languages I know well, collaborating with AI feels like pulling teeth. The process that should streamline development often takes longer than just cracking open the docs and figuring it out myself.
