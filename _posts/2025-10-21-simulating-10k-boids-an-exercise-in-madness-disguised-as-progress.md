@@ -10,9 +10,7 @@ I've heard that phrase throughout my life and thought "of course, if something i
 
 I've always had the itch to push a boid simulation to its limits. After writing one in GDScript and being unsatisfied with the performance, I thought I'd push it further. I recently found myself with time and the opportunity to learn Rust, and thought "this beats reading docs any day." What started as a simple learning exercise turned into rebuilding the same simulation across GDScript, C#, and eventually Rust, not because I planned to, but because each implementation taught me where the previous one was hitting walls.
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://youtu.be/Mp5upiIqIiQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Mp5upiIqIiQ" frameborder="0" allowfullscreen></iframe>
 
 So what are boids, and why are they so demanding? Boids are an emergent simulation where every entity follows three simple rules: separation (move away from neighbors), alignment (match neighbors' direction), and cohesion (move toward the group's center). These three rules create flocking behavior like a flock of birds or, if you'll forgive my Midwest hunting reference, chuckers taking flight.
 The problem? With the naive approach where every boid checks every other boid, you bottom out around 200 entities. That's not a hardware limit; it's a computational wall. At 10,000 boids checking neighbors every frame, you're looking at 100 million distance calculations per second at 60fps.
