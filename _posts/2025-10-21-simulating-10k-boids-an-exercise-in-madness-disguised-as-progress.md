@@ -1,13 +1,18 @@
 ______________________________________________________________________
 
-## layout: post title: "Simulating 10k boids, an exercise in madness disguised as progress." date: 2025-10-21 categories:
+## layout: post title: "Simulating 10k boids, an exercise in insanity disguised as progress." date: 2025-10-21 categories:
 
 Insanity is doing the same thing over and over and expecting a different result.
 
-I've heard that phrase throughout my life and thought "of course, if something isn't working, you're obviously not trying the right thing." The follow-up thought is always something like "Edison didn't fail to make the lightbulb hundreds of times, he learned hundreds of ways not to make one." But here's what frustrates me about AI: it makes you painfully aware of what you don't understand. Even in languages I know well, collaborating with AI feels like pulling teeth. The process that should streamline development often takes longer than just cracking open the docs and figuring it out myself.
+I've heard that phrase throughout my life and thought "of course, if something isn't working, you're obviously not trying the right thing." The follow-up thought is always something like "Edison didn't fail to make the lightbulb hundreds of times, he learned hundreds of ways not to make one." That sounds great until you're learning those hundred ways with AI whispering in your ear. It makes you painfully aware of what you don't understand. Even in languages I know well, collaborating with AI feels like pulling teeth. The process that should streamline development often takes longer than just cracking open the docs and figuring it out myself.
+
+I've always had the itch to push a boid simulation to its limits. After writing one in GDScript and being unsatisfied with the performance, I thought I'd push it further. I recently found myself with time and the opportunity to learn Rust, and thought "this beats reading docs any day." What started as a simple learning exercise turned into rebuilding the same simulation across GDScript, C#, and eventually Rust, not because I planned to, but because each implementation taught me where the previous one was hitting walls.
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://youtu.be/Mp5upiIqIiQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 So what are boids, and why are they so demanding? Boids are an emergent simulation where every entity follows three simple rules: separation (move away from neighbors), alignment (match neighbors' direction), and cohesion (move toward the group's center). These three rules create flocking behavior like a flock of birds or, if you'll forgive my Midwest hunting reference, chuckers taking flight.
-
 The problem? With the naive approach where every boid checks every other boid, you bottom out around 200 entities. That's not a hardware limit; it's a computational wall. At 10,000 boids checking neighbors every frame, you're looking at 100 million distance calculations per second at 60fps.
 
 The solution is spatial partitioning. Think of it like this: if you were in marching band, you'll remember those dot sheets showing where everyone stands on the field. Imagine every band member has to find their dot on a sheet with the entire 200-person band, Now imagine the band director spends a couple nights making individualized sheets showing only your nearby dots and their spacing. That's spatial partitioning: pre-calculating neighborhoods so each boid only searches a small, relevant set instead of the entire swarm.
